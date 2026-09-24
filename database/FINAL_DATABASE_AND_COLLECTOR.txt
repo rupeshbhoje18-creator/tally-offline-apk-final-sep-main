@@ -1,0 +1,23 @@
+FINAL DATABASE + WHOLE COMPANY PAGE MIRROR
+
+Room database version: 4
+Database file: tally_offline_final.db
+
+Core tables:
+- companies
+- ledgers
+- vouchers
+- voucher_entries
+- stock_items
+- sync_state
+- page_snapshots
+
+Page mirror:
+- Automatically saves each authenticated portal page after it finishes loading.
+- SYNC WHOLE COMPANY crawls safe same-origin GET links and saves each rendered page.
+- SAVE THIS PAGE saves the current page immediately.
+- Pages are grouped by companyId/companyName.
+- Page HTML is sanitized and GZIP-compressed in page_snapshots.htmlGzip.
+- OfflinePageActivity renders saved HTML with network requests blocked.
+
+The mirror does not fabricate accounting data.
